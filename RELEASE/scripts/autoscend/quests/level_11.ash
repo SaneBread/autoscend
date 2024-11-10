@@ -2169,9 +2169,9 @@ boolean L11_hiddenCityZones()
 		return autoAdv($location[The Hidden Park]);
 	}
 
-	if (get_property("breathitinCharges").to_int() > 0)
+	if (get_property("breathitinCharges").to_int() > 0 && !allowSoftblockOutdoorAdvs())
 	{
-		// Shrines & Ziggurat are outdoor zones with free combats. Let's not waste Breathitin charges.
+		// Shrines & Ziggurat are outdoor zones with free combats. Let's not waste Breathitin charges unless we have to.
 		return false;
 	}
 
